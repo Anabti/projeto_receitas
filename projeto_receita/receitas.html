@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Receitas - Doce Encanto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container-header">
+            <div class="logo">
+                <img src="imagens/logo.png" alt="Logo Doce Encanto">
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="receitas.html">Receitas</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+
+                <div class="mobile-menu-toggle">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TÍTULO DA PÁGINA -->
+    <section class="titulo-pagina">
+        <h1>Nossas Receitas</h1>
+        <p>Descubra sabores irresistíveis preparados com carinho.</p>
+    </section>
+
+      <main class="secao-receita-detalhe">
+        <section class="conteudo-receita">
+            <h1 id="titulo-receita">Receita</h1>
+            <img id="imagem-receita" src="" alt="">
+            <p id="descricao-receita"></p>
+
+            <h3>Ingredientes</h3>
+            <ul id="ingredientes-receita"></ul>
+
+            <h3>Modo de Preparo</h3>
+            <ol id="preparo-receita"></ol>
+        </section>
+
+    <!-- RECEITAS -->
+    <section class="receitas-container">
+
+        <!-- Cupcake -->
+        <div class="card-receita">
+            <img src="imagens/cupcake.jpg" alt="Cupcake">
+            <h2>Cupcake</h2>
+            <p>Pequenos bolinhos individuais, macios e perfeitos para qualquer ocasião.</p>
+            <a href="#cupcake" class="botao">Ver Receita</a>
+        </div>
+
+        <!-- Pudim -->
+        <div class="card-receita">
+            <img src="imagens/pudim.jpg" alt="Pudim">
+            <h2>Pudim</h2>
+            <p>Clássico da sobremesa brasileira, cremoso e com calda caramelizada.</p>
+            <a href="#pudim" class="botao">Ver Receita</a>
+        </div>
+
+        <!-- Red Velvet -->
+        <div class="card-receita">
+            <img src="imagens/redvelvet.jpg" alt="Bolo Red Velvet">
+            <h2>Bolo Red Velvet</h2>
+            <p>Bolo sofisticado de cor vermelha intensa com cobertura cremosa.</p>
+            <a href="#redvelvet" class="botao">Ver Receita</a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-logo">
+                <img src="imagens/Logotipo confeitaria bolos rosa marrom (1).png" alt="Logo Doce Encanto">
+            </div>
+
+            <div>
+                <h3>Links</h3>
+                <p><a href="index.html">Início</a></p>
+                <p><a href="sobre.html">Sobre</a></p>
+                <p><a href="contato.html">Contato</a></p>
+            </div>
+
+            <div>
+                <h3>Contato</h3>
+                <p>Email:anabeatrizzt.i@gmail.com</p>
+                <p>Telefone: (11) 910562535</p>
+            </div>
+
+        </div>
+
+        <div class="copy">
+            <p>© 2026 Doce Encanto - Projeto Acadêmico</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+         });
+
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        });
+    });
+
+    // Receitas Dinâmicas
+    const receitas = {
+    pirao: {
+        titulo: "Pirão",
+        imagem: "img/receitas/pirao.png",
+        descricao: "Acompanhamento cremoso clássico feito a partir do caldo do cozimento do peixe.",
+        ingredientes: [
+            "500ml de caldo de peixe bem temperado",
+            "1 xícara de farinha de mandioca artesanal",
+            "Coentro e cebolinha picados",
+            "Pimenta-do-reino a gosto"
+        ],
+        preparo: [
+            "Leve o caldo de peixe ao fogo até levantar fervura.",
+            "Reduza o fogo e adicione a farinha de mandioca aos poucos, em chuva, mexendo sempre para não empelotar.",
+            "Cozinhe por cerca de 5 minutos até a farinha estar hidratada e o pirão brilhante.",
+            "Finalize com o cheiro-verde e sirva imediatamente."
+        ]
+    },
+
+     const params = new URLSearchParams(window.location.search);
+    const nomeReceita = params.get("nome");
+
+    if (receitas[nomeReceita]) {
+        const receita = receitas[nomeReceita];
+        document.getElementById("titulo-receita").innerText = receita.titulo;
+        document.getElementById("imagem-receita").src = receita.imagem;
+        document.getElementById("imagem-receita").alt = receita.titulo;
+        document.getElementById("descricao-receita").innerText = receita.descricao;
+
+        const ul = document.getElementById("ingredientes-receita");
+        receita.ingredientes.forEach(i => {
+            const li = document.createElement("li");
+            li.textContent = i;
+            ul.appendChild(li);
+        });
+
+        const ol = document.getElementById("preparo-receita");
+        receita.preparo.forEach(p => {
+            const li = document.createElement("li");
+            li.textContent = p;
+            ol.appendChild(li);
+        });
+    } else {
+        document.getElementById("titulo-receita").innerText = "Receita não encontrada";
+        document.getElementById("descricao-receita").innerText = "Volte para a página de receitas e escolha outra opção.";
+    }
+    </script>
+
+</body>
+</html>

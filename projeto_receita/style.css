@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F5EDE6;
+}
+
+header {
+  background-color: #BFE3D5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.footer-logo img {
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.hero {
+  background-color: #D69C6B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  max-width: 400px;
+}
+
+.hero button {
+  background-color: #E8B7C7;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.hero img {
+  width: 400px;
+}
+
+.destaque {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: white;
+  width: 280px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card button {
+  background-color: #E8B7C7;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.ver-todas button {
+  margin-top: 30px;
+  background-color: #BFE3D5;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+.sobre {
+  background-color: #D69C6B;
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.sobre-conteudo {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.contato {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+footer {
+  background-color: #BFE3D5;
+  padding: 40px 80px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 20px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.titulo-pagina {
+    text-align: center;
+    padding: 40px;
+    background-color: #fce4ec;
+}
+
+.receitas-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+}
+
+.card-receita {
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.card-receita img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #d81b60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    background: #f8bbd0;
+    padding: 40px 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 20px;
+}
